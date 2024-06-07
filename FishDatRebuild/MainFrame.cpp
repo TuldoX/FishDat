@@ -131,7 +131,7 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
     }
 
     fout << "<!DOCTYPE html>\n<html lang=\"sk\">\n<head>\n";
-    fout << "<title>Ročný sumár</title>\n";
+    fout << "<title>Ro─Źný sumár</title>\n";
     fout << "<style>\n";
     fout << "body { font-family: Arial, sans-serif; }\n";
     fout << "h1, h2 { text-align: center; }\n";
@@ -141,7 +141,7 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
     fout << "th { background-color: #f2f2f2; }\n";
     fout << "tr:nth-child(even) { background-color: #f9f9f9; }\n";
     fout << "</style>\n</head>\n<body>\n";
-    fout << "<h1>Celoročný sumár</h1>\n";
+    fout << "<h1>Celoro─Źný sumár</h1>\n";
 
     fout << "<h2>Rev&iacute;ry</h2>\n";
     for (const auto& revirPair : revirs) {
