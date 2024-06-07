@@ -95,6 +95,7 @@ void MainFrame::spracujClicked(wxCommandEvent& evt) {
 
     std::vector<Ryba> ryby;
     std::vector<Revir> revir;
+    std::vector<Celkovo> celkovo;
 
-    processFile(fileName, outputFile,ryby, revir);
+    processFile(fileName, outputFile,ryby, revir,celkovo);
 }

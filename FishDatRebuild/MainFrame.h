@@ -12,9 +12,15 @@ class MainFrame : public wxFrame
 public:
     MainFrame(const wxString& title);
 
+    struct Celkovo {
+        std::string celkovoDruh;
+        float celkovaHmotnost;
+    };
+
     struct Revir {
         std::string cislo;
         int pocetVychadzok;
+        std::vector<Celkovo> celkovo;
     };
 
     struct Ryba {
@@ -23,7 +29,7 @@ public:
         float hmotnost;
     };
 
-    void processFile(wxString& fileName,wxString& outputFile, std::vector<Ryba>& ulovky, std::vector<Revir>& reviry) {
+    void processFile(wxString& fileName,wxString& outputFile, std::vector<Ryba>& ulovky, std::vector<Revir>& reviry,std::vector<Celkovo>& celkovo) {
         std::string filename = fileName.ToStdString();
 
         if (filename.empty()) {
