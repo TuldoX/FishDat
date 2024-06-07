@@ -18,6 +18,7 @@ wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
 EVT_BUTTON(PREHLAD_ID, MainFrame::OnPrehladClicked)
 EVT_BUTTON(SPRACUJ_ID, MainFrame::spracujClicked)
 EVT_BUTTON(UMIESTNENIE_ID, MainFrame::umiestnenieClicked)
+EVT_BUTTON(OTVOR_ID, MainFrame::otvorClicked)
 wxEND_EVENT_TABLE()
 
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
@@ -171,4 +172,13 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
     fout << "</table>\n</body>\n</html>\n";
 
     fout.close();
+}
+
+void MainFrame::otvorClicked(wxCommandEvent& evt){
+    wxString outputHtmlFile = outputFile + "\\rocny_sumar.html";
+    if (!wxFileExists(outputHtmlFile)) {
+        wxMessageBox("Output file does not exist: " + outputHtmlFile, "File Not Found", wxOK | wxICON_ERROR);
+        return;
+    }
+    wxLaunchDefaultBrowser(outputHtmlFile);
 }

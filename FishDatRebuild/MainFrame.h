@@ -24,10 +24,12 @@ public:
 
     void processFile(const wxString& fileName, const wxString& outputFile, std::map<std::string, Revir>& revirs, int& totalVisits, std::map<std::string, Catch>& totalCatches);
     void createHtml(const wxString& outputFile, const std::map<std::string, Revir>& revirs, int totalVisits, const std::map<std::string, Catch>& totalCatches);
+    void otvorClicked(wxCommandEvent& evt);
 
 private:
     void OnPrehladClicked(wxCommandEvent& evt);
     void umiestnenieClicked(wxCommandEvent& evt);
     void spracujClicked(wxCommandEvent& evt);
+    
     wxDECLARE_EVENT_TABLE();
 };
