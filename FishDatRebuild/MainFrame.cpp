@@ -142,7 +142,7 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
     fout << "th { background-color: #f2f2f2; }\n";
     fout << "tr:nth-child(even) { background-color: #f9f9f9; }\n";
     fout << "</style>\n</head>\n<body>\n";
-    fout << "<h1>Celoro─Źný sumár</h1>\n";
+    fout << "<h1>Celoro&#269;ný sumár</h1>\n";
 
     fout << "<h2>Rev&iacute;ry</h2>\n";
     for (const auto& revirPair : revirs) {
@@ -151,7 +151,7 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
         fout << "<table>\n";
         fout << "<tr><th colspan='3'>Revir: " << revir << "</th></tr>\n";
         fout << "<tr><td colspan='3'>Po&#269;et vych&aacute;dzok: " << revirData.visits << "</td></tr>\n";
-        fout << "<tr><th>Druh</th><th>Po&#269;et</th><th>Hmotnos&#357;(kg)</th></tr>\n";
+        fout << "<tr><th>Druh</th><th>Ks</th><th>Hmotnos&#357;(kg)</th></tr>\n";
         for (const auto& catchPair : revirData.catches) {
             const std::string& species = catchPair.first;
             const Catch& catchData = catchPair.second;
@@ -163,7 +163,7 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
     fout << "<h2>Celkom</h2>\n";
     fout << "<table>\n";
     fout << "<tr><td colspan='3'>Po&#269;et vych&aacute;dzok: " << totalVisits << "</td></tr>\n";
-    fout << "<tr><th>Druh</th><th>Po&#269;et</th><th>Hmotnos&#357;(kg)</th></tr>\n";
+    fout << "<tr><th>Druh</th><th>Ks</th><th>Hmotnos&#357;(kg)</th></tr>\n";
     for (const auto& catchPair : totalCatches) {
         const std::string& species = catchPair.first;
         const Catch& catchData = catchPair.second;
