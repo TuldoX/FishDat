@@ -75,6 +75,16 @@ void MainFrame::umiestnenieClicked(wxCommandEvent& evt) {
 }
 
 void MainFrame::spracujClicked(wxCommandEvent& evt) {
+    
+    if (fileName == "") {
+        wxMessageBox("File not selected!", "Too few arguments", wxOK | wxICON_ERROR);
+        return;
+    }
+    else if (outputFile == "") {
+        wxMessageBox("Directory not selected!", "Too few arguments", wxOK | wxICON_ERROR);
+        return;
+    }
+    
     std::map<std::string, Revir> revirs;
     int totalVisits = 0;
     std::map<std::string, Catch> totalCatches;
@@ -132,7 +142,7 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
     }
 
     fout << "<!DOCTYPE html>\n<html lang=\"sk\">\n<head>\n";
-    fout << "<title>Ro─Źný sumár</title>\n";
+    fout << "<title>Ro&#269;ný sumár</title>\n";
     fout << "<style>\n";
     fout << "body { font-family: Arial, sans-serif; }\n";
     fout << "h1, h2 { text-align: center; }\n";
@@ -149,13 +159,18 @@ void MainFrame::createHtml(const wxString& outputFile, const std::map<std::strin
         const std::string& revir = revirPair.first;
         const Revir& revirData = revirPair.second;
         fout << "<table>\n";
-        fout << "<tr><th colspan='3'>Revir: " << revir << "</th></tr>\n";
+        fout << "<tr><th colspan='3'>Revír: " << revir << "</th></tr>\n";
         fout << "<tr><td colspan='3'>Po&#269;et vych&aacute;dzok: " << revirData.visits << "</td></tr>\n";
         fout << "<tr><th>Druh</th><th>Ks</th><th>Hmotnos&#357;(kg)</th></tr>\n";
-        for (const auto& catchPair : revirData.catches) {
-            const std::string& species = catchPair.first;
-            const Catch& catchData = catchPair.second;
-            fout << "<tr><td>" << species << "</td><td>" << catchData.count << "</td><td>" << catchData.weight << "</td></tr>\n";
+        if (revirData.catches.empty()) {
+            fout << "<tr><td>" << "-" << "</td><td>" << "-" << "</td><td>" << "-" << " </td></tr>\n";
+        }
+        else {
+            for (const auto& catchPair : revirData.catches) {
+                const std::string& species = catchPair.first;
+                const Catch& catchData = catchPair.second;
+                fout << "<tr><td>" << species << "</td><td>" << catchData.count << "</td><td>" << catchData.weight << "</td></tr>\n";
+            }
         }
         fout << "</table>\n<br>\n";
     }
