@@ -106,9 +106,10 @@ void MainFrame::processFile(const wxString& fileName, const wxString& outputFile
     std::string line;
     while (std::getline(fin, line)) {
         std::istringstream lineStream(line);
-        std::string revir, species, weightStr;
+        std::string revir, species, weightStr,length;
         std::getline(lineStream, revir, ';');
         std::getline(lineStream, species, ';');
+        std::getline(lineStream, length, ';');
         std::getline(lineStream, weightStr, ';');
 
         if (species != "-" && weightStr != "-" && !weightStr.empty() && std::all_of(weightStr.begin(), weightStr.end(), [](char c) { return std::isdigit(c) || c == '.'; })) {
