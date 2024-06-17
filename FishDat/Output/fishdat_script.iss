@@ -28,12 +28,12 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDatRebuild\x64\Release\FishDatRebuild.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDatRebuild\FishDatRebuild\logo.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDatRebuild\FishDatRebuild\App.h"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDatRebuild\FishDatRebuild\App.cpp"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDatRebuild\FishDatRebuild\MainFrame.h"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDatRebuild\FishDatRebuild\MainFrame.cpp"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDat\x64\Release\FishDat.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDat\FishDat\logo.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDat\FishDat\App.h"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDat\FishDat\App.cpp"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDat\FishDat\MainFrame.h"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\NTB\Dokumenty\Skola\Projekty\FishDat\FishDat\MainFrame.cpp"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
